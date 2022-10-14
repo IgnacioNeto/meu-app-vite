@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Menu from "./Menu";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Cabecalho from "./layout/Cabecalho";
+import Home from "./pages/Home";
+import ClassicRock from "./pages/ClassicRock";
+import HeavyMetal from "./pages/HeavyMetal";
+import Rodape from "./layout/Rodape";
 
+import "./estilo.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <>
+      <h1>teste</h1>
+      <BrowserRouter>
+        <Cabecalho />
 
-export default App
+        <main>
+          <Menu />
+          <section>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/classicrock">
+                <ClassicRock />
+              </Route>
+              <Route path="/heavymetal">
+                <HeavyMetal />
+              </Route>
+            </Switch>
+          </section>
+        </main>
+
+        <Rodape />
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;
