@@ -8,8 +8,6 @@ const Home = () => {
         laboriosam esse dolorem accusantium assumenda dicta nihil ut aut hic
         est!
       </p>
-
-      <hr />
     </>
   );
 };

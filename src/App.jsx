@@ -5,14 +5,12 @@ import Cabecalho from "./layout/Cabecalho";
 import Home from "./pages/Home";
 import ClassicRock from "./pages/ClassicRock";
 import HeavyMetal from "./pages/HeavyMetal";
-import Rodape from "./layout/Rodape";
 
 import "./estilo.css";
 
 const App = () => {
   return (
     <>
-      <h1>teste</h1>
       <BrowserRouter>
         <Cabecalho />
 
@@ -32,8 +30,6 @@ const App = () => {
             </Switch>
           </section>
         </main>
-
-        <Rodape />
       </BrowserRouter>
     </>
   );
